@@ -1,6 +1,6 @@
-# myapp
+# kill the boss
 
-A new Flutter project.
+A new simple Flutter project/game using idx:google
 
 ## Getting Started
 
