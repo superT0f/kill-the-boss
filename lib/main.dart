@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              '${getRandomUnicode()} You have pushed the button this many times:',
+              'You have pushed the button this many times : ${getRandomUnicode()} | ${getRandomUnicode()}',
             ),
             Text(
               '$_counter',
