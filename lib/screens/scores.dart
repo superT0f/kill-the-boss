@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../main.dart';
 
 class Scores extends StatelessWidget {
   const Scores({super.key});
