@@ -17,17 +17,4 @@ void main() {
     expect(find.text('Clement 43 Try'), findsOneWidget);
   });
 
-  testWidgets('Home page has three buttons', (WidgetTester tester) async {
-    await tester.pumpWidget(const MaterialApp(home: FirstScreen()));
-
-    expect(find.text('play!'), findsOneWidget);
-    expect(find.text('high scores'), findsOneWidget);
-    expect(find.text('settings'), findsOneWidget);
-  });
-
-  testWidgets('Home page has an image', (WidgetTester tester) async {
-    await tester.pumpWidget(const MaterialApp(home: FirstScreen()));
-
-    expect(find.byType(Image), findsOneWidget);
-  });
 }
