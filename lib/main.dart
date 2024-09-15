@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'screens/ktb.dart';
 import 'screens/scores.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
 import 'theme.dart';
 import 'screens/gtn.dart';
 import 'screens/home.dart';
@@ -13,8 +12,6 @@ final myTextEditingController = TextEditingController();
 // late SharedPreferences prefs;
 
 Future<void> main() async {
-  // prefs = await SharedPreferences.getInstance();
-  // myTextEditingController.text = prefs.getString('username') ?? "empty";
   myTextEditingController.text = "empty";
   runApp(const MyApp());
 }

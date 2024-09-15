@@ -15,7 +15,7 @@ class FirstScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image(image: AssetImage('img/title.png')),
+              Image(image: AssetImage('assets/img/title.png')),
               Spacer(),
               ElevatedButton(
                 style: TextButton.styleFrom(minimumSize: Size(200, 50)),
