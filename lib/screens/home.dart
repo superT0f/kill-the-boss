@@ -20,10 +20,16 @@ class FirstScreen extends StatelessWidget {
               ElevatedButton(
                 style: TextButton.styleFrom(minimumSize: Size(200, 50)),
                 onPressed: () {
-                  // prefs.setString('username', myTextEditingController.text);
+                  Navigator.pushNamed(context, '/ktb');
+                },
+                child: const Text('play Guess the number!'),
+              ),
+              ElevatedButton(
+                style: TextButton.styleFrom(minimumSize: Size(200, 50)),
+                onPressed: () {
                   Navigator.pushNamed(context, '/game');
                 },
-                child: const Text('play!'),
+                child: const Text('play Kill the boss !'),
               ),
               ElevatedButton(
                 style: TextButton.styleFrom(minimumSize: Size(200, 50)),

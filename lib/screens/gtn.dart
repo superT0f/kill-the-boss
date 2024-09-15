@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import '../main.dart';
 import '../util.dart';
 
-class KillTheBoss extends StatefulWidget {
-  const KillTheBoss({super.key, required this.title});
+class GuessTheNumber extends StatefulWidget {
+  const GuessTheNumber({super.key, required this.title});
   final String title;
 
   @override
-  State<KillTheBoss> createState() => _KillTheBossState();
+  State<GuessTheNumber> createState() => GuessTheNumberState();
 }
 
-class _KillTheBossState extends State<KillTheBoss> {
+class GuessTheNumberState extends State<GuessTheNumber> {
   int _counter = 0;
   int _try = 0;
   int _secretNumber = random(200);
@@ -21,11 +21,10 @@ class _KillTheBossState extends State<KillTheBoss> {
 
   void _decrementCounter() {
     setState(() {
-      if (_counter-_randomInc <= 0) {
+      if (_counter - _randomInc <= 0) {
         _counter = 0;
-      } else
-      {
-        _counter=_counter-_randomInc;
+      } else {
+        _counter = _counter - _randomInc;
         _victory = (_counter == _secretNumber);
         _try++;
       }
@@ -36,7 +35,7 @@ class _KillTheBossState extends State<KillTheBoss> {
 
   void _incrementCounter() {
     setState(() {
-      _counter=_counter+_randomInc;
+      _counter = _counter + _randomInc;
       _try++;
       _randomInc = random(20);
       _victory = (_counter == _secretNumber);
@@ -55,14 +54,17 @@ class _KillTheBossState extends State<KillTheBoss> {
 
   @override
   Widget build(BuildContext context) {
-    var guessColor = _counter < _secretNumber ? Colors.yellowAccent : Colors.red;
-    var name = (myTextEditingController.text.isEmpty) ? 'John DOE' : myTextEditingController.text;
-    var pushMsg =
-        '$_try try.'
+    var guessColor =
+        _counter < _secretNumber ? Colors.yellowAccent : Colors.red;
+    var name = (myTextEditingController.text.isEmpty)
+        ? 'John DOE'
+        : myTextEditingController.text;
+    var pushMsg = '$_try try.'
         'Hello $name, you have to reach the magic number : $_secretNumber (current is $_counter)';
     var img = Image(image: AssetImage('img/title.png'));
     if (_victory) {
-      pushMsg = "\u2665 -= \\o/ Victory in $_try try : $_secretNumber VS $_counter \\o/ =- \u2665";
+      pushMsg =
+          "\u2665 -= \\o/ Victory in $_try try : $_secretNumber VS $_counter \\o/ =- \u2665";
       guessColor = Colors.deepOrange;
       img = Image(image: AssetImage('img/victory.png'));
     }
@@ -70,8 +72,8 @@ class _KillTheBossState extends State<KillTheBoss> {
       appBar: AppBar(
         title: Text(appName,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
-              color: Theme.of(context).colorScheme.onSecondary,
-            )),
+                  color: Theme.of(context).colorScheme.onSecondary,
+                )),
         backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Center(
@@ -86,27 +88,23 @@ class _KillTheBossState extends State<KillTheBoss> {
             FloatingActionButton(
               onPressed: _incrementCounter,
               tooltip: 'random Increment $_randomInc',
-
               child: const Icon(Icons.add),
             ),
             AnimatedContainer(
-              width: _counter.toDouble()*5,
+              width: _counter.toDouble() * 5,
               height: 42,
               decoration: BoxDecoration(
-                  color: guessColor,
-                  borderRadius: BorderRadius.circular(50.0)
-              ),
+                  color: guessColor, borderRadius: BorderRadius.circular(50.0)),
               duration: Duration(seconds: 2),
               curve: Curves.fastOutSlowIn,
             ),
             img,
             AnimatedContainer(
-              width: _secretNumber.toDouble()*5,
+              width: _secretNumber.toDouble() * 5,
               height: 42,
               decoration: BoxDecoration(
                   color: Colors.green,
-                  borderRadius: BorderRadius.circular(50.0)
-              ),
+                  borderRadius: BorderRadius.circular(50.0)),
               duration: Duration(seconds: 0),
               curve: Curves.fastOutSlowIn,
             ),
@@ -131,7 +129,6 @@ class _KillTheBossState extends State<KillTheBoss> {
         tooltip: 'new game',
         child: const Icon(Icons.reset_tv),
       ),
-
     );
   }
 }

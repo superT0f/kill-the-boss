@@ -1,5 +1,6 @@
 // import 'dart:math';
 import 'package:flutter/material.dart';
+import 'screens/ktb.dart';
 import 'screens/scores.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 import 'theme.dart';
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
         '/': (context) => const FirstScreen(),
         '/config': (context) => const Config(),
         '/scores': (context) => const Scores(),
+        '/gtn': (context) => const GuessTheNumber(
+              title: 'Guess The Number',
+            ),
         '/game': (context) => const KillTheBoss(title: appName),
       },
       title: appName,
